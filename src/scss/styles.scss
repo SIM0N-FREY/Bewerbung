@@ -1,9 +1,16 @@
-// 
+//
 // Styles
-// 
+//
+.subheading {
+  margin-bottom: 1.5rem !important; // statt default .5rem/.75rem
+}
 
 // Import variables
 @import "./variables.scss";
+
+// Farb-Definitionen
+$brand-orange: #c95f24;
+$brand-darkgray: #393f48;
 
 // Import Bootstrap
 @import "bootstrap/scss/bootstrap.scss";
@@ -17,3 +24,136 @@
 
 // Sections
 @import "./sections/resume-section.scss";
+
+// Sidebar Styles
+#sideNav {
+  background-color: #8ab0d1; // helles Blaugrau
+
+  .nav-link {
+    color: $brand-darkgray !important;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .img-profile {
+  width: 200px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+}
+
+// Global Text Colors
+body,
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.nav-link {
+  color: $brand-darkgray !important;
+}
+
+// Orange Highlights
+.text-primary {
+  color: $brand-orange !important;
+}
+
+// Books-Section Grid mit Scoped Styles
+section#books {
+  #books-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    overflow: hidden;      // verhindert Überlagerungen
+    position: relative;    // Bezugspunkt für Overlay
+    z-index: 1;
+
+    .item {
+      position: relative;
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+
+        .hover-overlay {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+
+      .hover-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+    }
+
+    // Panorama Cover (2:1 Ratio)
+    .item1 {
+      grid-column: 1 / span 2;
+    }
+
+    .item7 {
+      grid-column: 2 / span 2;
+    }
+  }
+}
+
+// Icons Grid
+.icons-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  svg {
+    // Standard‑Größe (groß für Desktop)
+    width: 32px * 3;
+    height: 32px * 3;
+    fill: $brand-darkgray;
+    transition: fill 0.2s ease;
+
+    &:hover {
+      fill: $brand-orange;
+    }
+
+    // Tablet‑Breakpoint (bis 768px)
+    @media (max-width: 768px) {
+      width: 64px;
+      height: 64px;
+    }
+
+    // Mobile‑Breakpoint (bis 576px)
+    @media (max-width: 576px) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}

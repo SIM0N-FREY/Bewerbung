@@ -1,9 +1,13 @@
 @charset "UTF-8";
 /*!
 * Start Bootstrap - Resume v7.0.6 (https://startbootstrap.com/theme/resume)
-* Copyright 2013-2023 Start Bootstrap
+* Copyright 2013-2025 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE)
 */
+.subheading {
+  margin-bottom: 1.5rem !important;
+}
+
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -10968,5 +10972,121 @@ section.resume-section .resume-section-content {
     padding-right: 3rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+}
+#sideNav {
+  background-color: #8ab0d1;
+}
+#sideNav .nav-link {
+  color: #393f48 !important;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+#sideNav .img-profile {
+  width: 200px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body,
+p,
+li,
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+.nav-link {
+  color: #393f48 !important;
+}
+
+.text-primary {
+  color: #c95f24 !important;
+}
+
+section#books #books-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+section#books #books-grid .item {
+  position: relative;
+  overflow: hidden;
+}
+section#books #books-grid .item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+section#books #books-grid .item:hover img {
+  transform: scale(1.1);
+}
+section#books #books-grid .item:hover .hover-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+section#books #books-grid .item .hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+section#books #books-grid .item1 {
+  grid-column: 1/span 2;
+}
+section#books #books-grid .item7 {
+  grid-column: 2/span 2;
+}
+
+.icons-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.icons-grid svg {
+  width: 96px;
+  height: 96px;
+  fill: #393f48;
+  transition: fill 0.2s ease;
+}
+.icons-grid svg:hover {
+  fill: #c95f24;
+}
+@media (max-width: 768px) {
+  .icons-grid svg {
+    width: 64px;
+    height: 64px;
+  }
+}
+@media (max-width: 576px) {
+  .icons-grid svg {
+    width: 48px;
+    height: 48px;
   }
 }
